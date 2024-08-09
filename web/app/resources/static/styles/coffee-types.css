@@ -1,0 +1,46 @@
+/* coffee_types.css */
+h2 {
+    color: #FF5722;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 5px;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+ul li::before {
+    content: "☕ ";
+    color: #FF5722;
+}
+
+ul li:hover {
+    animation: rotateAndColorChange 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rotateAndColorChange {
+    from {
+        transform: rotate(0deg);
+        color: #555;
+    }
+    to {
+        transform: rotate(10deg);
+        color: #FF5722;
+    }
+}

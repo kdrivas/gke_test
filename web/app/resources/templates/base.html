@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coffee App</title>
+    <link rel="stylesheet" href="/static/styles/base.css">
+    {% if request.url.path == '/' %}
+        <link rel="stylesheet" href="/static/styles/home.css">
+    {% elif request.url.path == '/coffee-types' %}
+        <link rel="stylesheet" href="/static/styles/coffee-types.css">
+    {% elif request.url.path == '/shops-nearby' %}
+        <link rel="stylesheet" href="/static/styles/shops-nearby.css">
+    {% endif %}
+</head>
+<body>
+    <header>
+        <h1>Coffee App</h1>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/coffee-types">Types of Coffee</a></li>
+                <li><a href="/shops-nearby">Shops Nearby You</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Coffee App</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coffee-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: coffee-app
+  template:
+    metadata:
+      labels:
+        app: coffee-app
+    spec:
+      containers:
+      - name: coffee-app
+        image: cap2nemo/coffee_app:v7
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8000
